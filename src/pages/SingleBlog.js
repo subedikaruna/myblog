@@ -7,6 +7,7 @@ const SingleBlog = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [blog, setBlog] = useState();
+
   const fetchBlog = async () => {
     const response = await axios.get(
       `https://66cd57fa8ca9aa6c8cca0c21.mockapi.io/blogs/${id}`
@@ -17,6 +18,7 @@ const SingleBlog = () => {
       alert("Something went wrong");
     }
   };
+
   const deleteBlog = async () => {
     const response = await axios.delete(
       `https://66cd57fa8ca9aa6c8cca0c21.mockapi.io/blogs/${id}`
@@ -27,6 +29,7 @@ const SingleBlog = () => {
       alert("Something went wrong");
     }
   };
+
   useEffect(() => {
     fetchBlog();
   }, []);
@@ -37,30 +40,33 @@ const SingleBlog = () => {
 
       <div className="py-10 px-5 md:px-20">
         <img
-          className="w-full h-80 object-cover"
+          className="w-full h-80 object-cover rounded-lg shadow-lg"
           src={blog?.avatar}
           alt={blog?.title}
         />
         <div className="p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
             {blog?.title}
           </h2>
-
-          <p className="text-gray-700 mb-4">{blog?.description}</p>
-          <p className="text-gray-700 mb-4">{blog?.createdAt}</p>
+          <p className="text-lg text-gray-700 mb-4">{blog?.description}</p>
+          <p className="text-sm text-gray-500 mb-6">{blog?.createdAt}</p>
         </div>
-        <button
-          onClick={() => navigate("/edit-blog/"+id)}
-          className="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-700 hover:shadow-lg hover:scale-105 focus:outline-none"
-        >
-          Edit
-        </button>
-        <button
-          onClick={deleteBlog}
-          className="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-700 hover:shadow-lg hover:scale-105 focus:outline-none"
-        >
-          Delete
-        </button>
+
+        <div className="flex space-x-4 mt-6">
+          <button
+            onClick={() => navigate("/edit-blog/" + id)}
+            className="px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-indigo-700 hover:shadow-lg hover:scale-105 focus:outline-none"
+          >
+            Edit
+          </button>
+
+          <button
+            onClick={deleteBlog}
+            className="px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-red-700 hover:shadow-lg hover:scale-105 focus:outline-none"
+          >
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );
