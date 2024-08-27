@@ -12,9 +12,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AllBlogs></AllBlogs>} />
-        <Route path="/single-blog" element={<SingleBlog></SingleBlog>} />
+        <Route path="/single-blog/:id" element={<SingleBlog></SingleBlog>} />
         <Route path="/create-blog" element={<CreateBlog></CreateBlog>} />
-        <Route path="/edit-blog" element={<EditBlog></EditBlog>} />
+        <Route path="/edit-blog/:id" element={<EditBlog></EditBlog>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/signup" element={<Login></Login>} />
       </Routes>
