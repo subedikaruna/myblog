@@ -2,14 +2,13 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md">
+    <nav className="bg-white border-gray-200 px-10 lg:px-20 py-10 shadow-md">
       <div className="flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap">
             Karuna
           </span>
         </a>
-   
 
         <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-8 lg:mt-0 text-sm font-medium">
           <li>
@@ -20,7 +19,7 @@ const Navbar = () => {
               All Blogs
             </a>
           </li>
-         
+
           <li>
             <a
               href="/create-blog"
@@ -29,7 +28,6 @@ const Navbar = () => {
               Create Blog
             </a>
           </li>
-        
         </ul>
       </div>
     </nav>

@@ -41,7 +41,8 @@ const AllBlogs = () => {
               className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >
               <img
-                className="w-full h-56 object-cover"
+                className="w-full  object-cover"
+                style={{ height: "20rem" }}
                 src={blog.avatar}
                 alt={blog.title}
               />

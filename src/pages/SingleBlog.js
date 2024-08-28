@@ -38,9 +38,10 @@ const SingleBlog = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="py-10 px-5 md:px-20">
+      <div className="py-10 px-5 md:px-20" style={{ height: "40rem" }}>
         <img
-          className="w-full h-80 object-cover rounded-lg shadow-lg"
+          className="w-full object-cover rounded-lg shadow-lg"
+          style={{ height: "100%" }}
           src={blog?.avatar}
           alt={blog?.title}
         />

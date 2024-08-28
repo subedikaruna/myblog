@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
@@ -19,14 +19,12 @@ const CreateBlog = () => {
       "https://66cd57fa8ca9aa6c8cca0c21.mockapi.io/blogs",
       data
     );
-  if (response.status===201){
-   navigate("/")
-  }else
-   {
-     alert("something went wrong")
-   }
-  }
-
+    if (response.status === 201) {
+      navigate("/");
+    } else {
+      alert("something went wrong");
+    }
+  };
 
   return (
     <div>
@@ -59,6 +57,7 @@ const CreateBlog = () => {
             <div className="mb-6">
               <label
                 for="image"
+                style={{}}
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
                 Upload Image
@@ -66,9 +65,9 @@ const CreateBlog = () => {
               <input
                 type="text"
                 id="image"
+               
                 name="image"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
-           
                 required
                 onChange={(e) => setImage(e.target.value)}
               />
