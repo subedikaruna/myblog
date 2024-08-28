@@ -37,6 +37,10 @@ const SingleBlog = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
+      <div className="p-6">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+            {blog?.title}
+          </h2>
 
       <div className="py-10 px-5 md:px-20" style={{ height: "40rem" }}>
         <img
@@ -45,10 +49,7 @@ const SingleBlog = () => {
           src={blog?.avatar}
           alt={blog?.title}
         />
-        <div className="p-6">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            {blog?.title}
-          </h2>
+       
           <p className="text-lg text-gray-700 mb-4">{blog?.description}</p>
           <p className="text-sm text-gray-500 mb-6">{blog?.createdAt}</p>
         </div>
