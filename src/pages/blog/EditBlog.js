@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Layout from "../../components/layout/Layout";
 
 const EditBlog = () => {
   const { id } = useParams();
@@ -44,8 +45,7 @@ const EditBlog = () => {
   }, []);
 
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <div className="bg-gray-100 flex items-center justify-center h-screen">
         <div className="max-w-lg w-full bg-white shadow-md rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
@@ -123,7 +123,7 @@ const EditBlog = () => {
           </form>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

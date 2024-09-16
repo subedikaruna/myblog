@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap">
-            Karuna
+            Blogs
           </span>
         </a>
 

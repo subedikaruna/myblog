@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Layout from "../../components/layout/Layout";
 
 const SingleBlog = () => {
   const navigate = useNavigate();
@@ -35,8 +36,7 @@ const SingleBlog = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <Layout>
       <div className="p-6 md:px-20">
         <h2 className="text-3xl font-semibold text-gray-900 mb-4">
           {blog?.title}
@@ -70,7 +70,7 @@ const SingleBlog = () => {
           </button>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
